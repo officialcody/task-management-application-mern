@@ -7,9 +7,7 @@ const PORT = process.env.PORT || 8080;
 app.use(cors());
 app.use(express.json());
 // Connect to MongoDB
-mongoose.connect(
-  "mongodb+srv://sparshgoelt26:S6D0JMZirsRO0iUM@cluster0.zxscwkf.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
-);
+mongoose.connect(process.env.MONGO_DB_URI);
 // Define routes and middleware
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
